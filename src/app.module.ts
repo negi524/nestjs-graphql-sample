@@ -8,12 +8,13 @@ import { ApolloDriver } from '@nestjs/apollo';
 
 @Module({
   imports: [
+    // GraphQLを利用する際はこれを追加
     GraphQLModule.forRoot({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // コードファーストで実装しているので、スキーマは自動生成される
       sortSchema: true,
     }),
-    AuthorModule,
+    AuthorModule, // 作成したmoduleをここに記載
   ],
   controllers: [AppController],
   providers: [AppService],
