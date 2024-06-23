@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Authorオブジェクト"""
+type Author {
+  """年齢"""
+  age: Int
+
+  """ID"""
+  id: Int!
+
+  """名前"""
+  name: String!
+}
+
+type Query {
+  """ID指定でAuthorを取得する"""
+  findAuthor(
+    """絞り込み用のID"""
+    id: Int!
+  ): Author
+
+  """Authorを全て取得する"""
+  getAuthor: [Author!]!
+}
